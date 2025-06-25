@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "图片高亮插件",
+  "version": "1.0",
+  "description": "为特定属性的图片添加高亮框",
+  "permissions": ["activeTab", "storage", "tabs", "contextMenus", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+} 
